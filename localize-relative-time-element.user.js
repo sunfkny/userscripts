@@ -28,16 +28,14 @@
         for (const mutation of mutations) {
             mutation.addedNodes.forEach(node => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
-                    if (node.tagName === 'RELATIVE-TIME') {
-                        localizeElement(node);
-                    }
+                    localizeElement(node);
                     node.querySelectorAll?.('relative-time')?.forEach(localizeElement);
                 }
             });
         }
     });
 
-    observer.observe(document.body, {
+    observer.observe(document.documentElement, {
         childList: true,
         subtree: true
     });
