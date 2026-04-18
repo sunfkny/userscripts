@@ -6,7 +6,7 @@
 // @match        *://*.bilibili.com/*
 // @icon         https://www.bilibili.com/favicon.ico
 // @exclude      https://message.bilibili.com/pages/nav/header_sync
-// @run-at       document-body
+// @run-at       document-start
 // @grant        unsafeWindow
 // ==/UserScript==
 
@@ -68,7 +68,8 @@
         new RegExp("^(?:https?:)?//data\\.bilibili\\.com/"),
         new RegExp("^(?:https?:)?//cm\\.bilibili\\.com/cm/api/"),
         new RegExp("^(?:https?:)?//data\\.bilivideo\\.com/log/web/"),
-        new RegExp("^(?:https?:)?//s[01].hdslb.com/bfs/seed/log/report/"),
+        new RegExp("^(?:https?:)?//s[01]\\.hdslb\\.com/bfs/seed/log/report/"),
+        new RegExp("^(?:https?:)?//bvc\\.bilivideo\\.com/pbp/data"),
     ];
     function shouldSkipRequest(url) {
         if (typeof url !== "string") {
